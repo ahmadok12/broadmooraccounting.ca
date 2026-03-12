@@ -3152,54 +3152,6 @@ textarea::placeholder {
   color: var(--grey-mid);
 }
 
-/* File upload */
-.file-upload-area {
-  border: 2px dashed var(--grey-mid);
-  border-radius: 10px;
-  padding: 22px 20px;
-  text-align: center;
-  cursor: pointer;
-  transition: border-color 0.2s, background 0.2s;
-  position: relative;
-  background: var(--off-white);
-}
-.file-upload-area:hover {
-  border-color: var(--green);
-  background: var(--green-pale);
-}
-.file-upload-area input[type="file"] {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-}
-.file-upload-icon {
-  font-size: 26px;
-  margin-bottom: 8px;
-  display: block;
-}
-.file-upload-text {
-  font-size: 13.5px;
-  color: var(--navy);
-  font-weight: 500;
-}
-.file-upload-text strong {
-  color: var(--green);
-}
-.file-upload-hint {
-  font-size: 11.5px;
-  color: var(--text-muted);
-  margin-top: 4px;
-}
-.file-name-display {
-  font-size: 12px;
-  color: var(--green);
-  margin-top: 8px;
-  font-weight: 500;
-  display: none;
-}
 
 /* Divider */
 .form-divider {
@@ -5072,18 +5024,6 @@ textarea::placeholder {
       <div class="field-group">
         <label for="description">Description <span style="font-weight:400; text-transform:none; letter-spacing:0; color:var(--text-muted); font-size:11px;">(optional)</span></label>
         <textarea id="description" name="description" placeholder="Tell us a bit more about your situation or what you're looking for…" rows="4" style="width:100%; padding:13px 16px; border:1.5px solid var(--grey-mid); border-radius:9px; font-family:'DM Sans',sans-serif; font-size:14.5px; color:var(--ink); background:var(--white); transition:border-color 0.2s, box-shadow 0.2s; outline:none; resize:vertical; line-height:1.6;"></textarea>
-      </div>
-
-      <!-- File upload -->
-      <div class="field-group">
-        <label>Attachment <span style="font-weight:400; text-transform:none; letter-spacing:0; color:var(--text-muted); font-size:11px;">(optional)</span></label>
-        <div class="file-upload-area" id="upload-area">
-          <input type="file" name="attachment" id="file-input" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" onchange="handleFile(this)">
-          <span class="file-upload-icon">📎</span>
-          <div class="file-upload-text"><strong>Click to upload</strong> or drag & drop</div>
-          <div class="file-upload-hint">PDF, Word, or Image — max 10 MB</div>
-          <div class="file-name-display" id="file-name"></div>
-        </div>
       </div>
 
       <div class="form-divider"></div>

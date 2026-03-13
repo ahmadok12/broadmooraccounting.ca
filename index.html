@@ -23,6 +23,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-top: 106px; /* top-bar ~38px + nav 68px */
 }
 
 
@@ -245,6 +246,15 @@ html { scroll-behavior: smooth; }
 /* ═══════════════════════════
    TOP BAR
 ═══════════════════════════ */
+/* ── Fixed site header wrapper (top-bar + nav) ── */
+.site-header-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 500;
+}
+
 .top-bar {
   background: var(--navy-dark);
   color: rgba(255,255,255,0.85);
@@ -299,12 +309,12 @@ html { scroll-behavior: smooth; }
 /* ═══════════════════════════
    NAV
 ═══════════════════════════ */
-header nav, body > nav {
-  position: sticky;
-  top: 0;
+header nav, body > nav, .site-header-wrap > nav {
+  position: relative;
+  top: auto;
   z-index: 200;
   padding: 0 5%;
-  height: 90px;
+  height: 68px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -312,6 +322,40 @@ header nav, body > nav {
   backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(26,46,90,0.09);
   box-shadow: 0 2px 24px rgba(26,46,90,0.07);
+}
+
+/* ── Scrolled / shrunk state ── */
+.site-header-wrap.scrolled > nav,
+.site-header-wrap.scrolled header nav {
+  height: 40px;
+  box-shadow: 0 3px 28px rgba(26,46,90,0.12);
+  transition: height 0.3s ease, box-shadow 0.3s ease;
+}
+
+.site-header-wrap > nav,
+header nav {
+  transition: height 0.3s ease, box-shadow 0.3s ease;
+}
+
+.site-header-wrap.scrolled .nav-logo img {
+  height: 34px;
+  transition: height 0.3s ease;
+}
+
+.nav-logo img {
+  transition: height 0.3s ease;
+}
+
+.site-header-wrap.scrolled .top-bar {
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  overflow: hidden;
+  transition: height 0.3s ease, padding 0.3s ease;
+}
+
+.top-bar {
+  transition: height 0.3s ease, padding 0.3s ease;
 }
 
 /* Reset nav inside footer so it doesn't inherit sticky header styles */
@@ -334,7 +378,7 @@ header nav, body > nav {
 }
 
 .nav-logo img {
-  height: 80px;
+  height: 58px;
   width: auto;
 }
 
@@ -945,8 +989,8 @@ header nav, body > nav {
 @media (max-width: 960px) {
   .nav-menu, .nav-book { display: none; }
   .hamburger { display: flex; }
-  header nav, body > nav { height: 72px; }
-  .nav-logo img { height: 56px; }
+  header nav, body > nav, .site-header-wrap > nav { height: 60px; }
+  .nav-logo img { height: 46px; }
 
   .hero {
     grid-template-columns: 1fr;
@@ -3542,11 +3586,13 @@ textarea::placeholder {
 
 
   <!-- ═══ 1. broadmoor-with-partners.html ═══ -->
+  <!-- FIXED SITE HEADER -->
+<div class="site-header-wrap">
   <!-- TOP BAR -->
 <div class="top-bar">
-  <a href="mailto:info@broadmooraccounting.ca">
+  <a href="/cdn-cgi/l/email-protection#c1a8afa7ae81a3b3aea0a5acaeaeb3a0a2a2aeb4afb5a8afa6efa2a0">
     <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-    info@broadmooraccounting.ca
+    <span class="__cf_email__" data-cfemail="bcd5d2dad3fcdeced3ddd8d1d3d3cedddfdfd3c9d2c8d5d2db92dfdd">[email&#160;protected]</span>
   </a>
   <div class="top-bar-divider"></div>
   <a href="https://maps.google.com/?q=Broadmoor+Accounting+Financials" class="maps-link" target="_blank">
@@ -3606,6 +3652,7 @@ textarea::placeholder {
     <span></span><span></span><span></span>
   </button>
 </nav>
+</div><!-- /.site-header-wrap -->
 
 <!-- MOBILE NAV DRAWER -->
 <div class="mobile-nav" id="mobileNav" onclick="if(event.target===this)this.classList.remove('open')">
@@ -3835,7 +3882,7 @@ textarea::placeholder {
 
 
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function () {
   const strip = document.getElementById('partnersStrip');
   const track = document.getElementById('partnersTrack');
@@ -3922,6 +3969,21 @@ textarea::placeholder {
   // Hover pause
   strip.addEventListener('mouseenter', function () { if (!dragging) track.classList.add('paused'); });
   strip.addEventListener('mouseleave', function () { if (!dragging) track.classList.remove('paused'); });
+})();
+
+/* ── Nav shrink on scroll ── */
+(function () {
+  var header = document.querySelector('.site-header-wrap');
+  if (!header) return;
+  function onScroll() {
+    if (window.scrollY > 40) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 })();
 </script>
 
@@ -4925,7 +4987,7 @@ textarea::placeholder {
           </div>
           <div class="contact-info-text">
             <span class="contact-info-label">Email Us</span>
-            <a href="mailto:info@broadmooraccounting.ca" class="contact-info-value">info@broadmooraccounting.ca</a>
+            <a href="/cdn-cgi/l/email-protection#a5cccbc3cae5c7d7cac4c1c8cacad7c4c6c6cad0cbd1cccbc28bc6c4" class="contact-info-value"><span class="__cf_email__" data-cfemail="157c7b737a5577677a7471787a7a677476767a607b617c7b723b7674">[email&#160;protected]</span></a>
           </div>
         </div>
 
@@ -4945,7 +5007,7 @@ textarea::placeholder {
           </div>
           <div class="contact-info-text">
             <span class="contact-info-label">Visit Us</span>
-            <span class="contact-info-value">123 Financial Way, Suite 400<br>Vancouver, BC V6B 1A1</span>
+            <span class="contact-info-value">12 Blackfoot Road Unit #6<br>Sherwood Park, AB T8A 4P4</span>
           </div>
         </div>
 
@@ -5112,7 +5174,7 @@ textarea::placeholder {
               <span class="fc-icon">
                 <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
               </span>
-              <span>123 Financial Way, Suite 400<br>Vancouver, BC V6B 1A1</span>
+              <span>12 Blackfoot Road Unit #6<br>Sherwood Park, AB T8A 4P4</span>
             </li>
             <li>
               <span class="fc-icon">
@@ -5124,7 +5186,7 @@ textarea::placeholder {
               <span class="fc-icon">
                 <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               </span>
-              <a href="mailto:info@broadmooraccounting.ca">info@broadmooraccounting.ca</a>
+              <a href="/cdn-cgi/l/email-protection#177e7971785775657876737a787865767474786279637e7970397476"><span class="__cf_email__" data-cfemail="127b7c747d5270607d73767f7d7d607371717d677c667b7c753c7173">[email&#160;protected]</span></a>
             </li>
             <li>
               <span class="fc-icon">🕐</span>
@@ -5155,7 +5217,7 @@ textarea::placeholder {
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const btns   = document.querySelectorAll('.tab-btn');
   const panels = document.querySelectorAll('.tab-panel');
   const nav    = document.getElementById('tabNav');
@@ -5295,24 +5357,4 @@ textarea::placeholder {
   /* ── Show results helper ── */
   function showResults(id) {
     const el = document.getElementById(id);
-    el.style.display = 'block';
-    el.style.animation = 'none';
-    void el.offsetWidth;
-    el.style.animation = 'fadeUp 0.45s cubic-bezier(0.22,1,0.36,1) forwards';
-    el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }
-</script><script>
-  document.getElementById('contact-form').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const btn = this.querySelector('.btn-submit');
-    btn.textContent = 'Sending…';
-    btn.disabled = true;
-
-    const formData = new FormData(this);
-
-    try {
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: formData
-      });
-      const data = await res.json();
+    el.style.display = 'bl

@@ -1348,6 +1348,311 @@ a { text-decoration: none; }
   transform: translateY(-1px);
   box-shadow: 0 6px 18px rgba(26,46,90,0.3);
 }
+
+/* ═══════════════════════════════
+   INSURANCE COVERAGE CALCULATOR
+═══════════════════════════════ */
+.insurance-calc-section {
+  background: var(--off-white);
+  padding: 88px 6%;
+}
+
+.insurance-calc-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.insurance-calc-inner .section-label,
+.insurance-calc-inner .section-heading,
+.insurance-calc-inner .section-subtext {
+  text-align: center;
+}
+
+.insurance-calc-inner .section-subtext { margin-bottom: 48px; }
+
+/* Calculator panel */
+.calc-card {
+  background: var(--white);
+  border: 1px solid rgba(26,46,90,0.07);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 32px rgba(26,46,90,0.07);
+}
+
+.calc-card-header {
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+  padding: 36px 44px 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.calc-card-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--green), var(--green-light), transparent);
+}
+
+.calc-card-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.calc-card-header p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.calc-body { padding: 44px; }
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 28px;
+  margin-bottom: 32px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.field-group label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.field-group .field-hint {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  margin-top: -2px;
+}
+
+.input-wrap { position: relative; }
+
+.input-wrap .input-prefix {
+  position: absolute;
+  left: 14px; top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.input-wrap .input-suffix {
+  position: absolute;
+  right: 14px; top: 50%;
+  transform: translateY(-50%);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.input-wrap input {
+  width: 100%;
+  height: 48px;
+  border: 1.5px solid var(--grey-light);
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+  background: var(--off-white);
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.input-wrap input:focus {
+  border-color: var(--green);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(46,139,71,0.1);
+}
+
+.input-wrap.has-prefix input { padding: 0 14px 0 34px; }
+.input-wrap.has-suffix input { padding: 0 42px 0 14px; }
+.input-wrap:not(.has-prefix):not(.has-suffix) input { padding: 0 14px; }
+
+.form-section-divider {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 4px 0;
+}
+
+.form-section-divider span {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.form-section-divider::before,
+.form-section-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--grey-light);
+}
+
+.field-group.negative .input-prefix { color: #e05252; }
+.field-group.negative input:focus { border-color: #e05252; box-shadow: 0 0 0 3px rgba(224,82,82,0.08); }
+
+.calc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--green);
+  color: var(--white);
+  border: none;
+  border-radius: 10px;
+  padding: 15px 36px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px rgba(46,139,71,0.28);
+}
+
+.calc-btn:hover {
+  background: var(--navy);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 22px rgba(26,46,90,0.22);
+}
+
+.calc-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.calc-reset {
+  background: none;
+  border: 1.5px solid var(--grey-mid);
+  border-radius: 10px;
+  padding: 14px 24px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.calc-reset:hover { border-color: var(--navy); color: var(--navy); }
+
+.result-box {
+  display: none;
+  margin-top: 36px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(46,139,71,0.18);
+  animation: resultFadeUp 0.4s ease both;
+}
+
+.result-box.visible { display: block; }
+
+@keyframes resultFadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.result-header {
+  background: linear-gradient(135deg, #1d4d2e 0%, var(--green) 100%);
+  padding: 28px 36px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.result-icon-wrap {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.result-header-text h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 6px;
+}
+
+.result-amount {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1;
+}
+
+.result-amount.negative-coverage { color: #ffd6d6; }
+
+.result-body {
+  background: var(--white);
+  padding: 32px 36px;
+}
+
+.result-formula {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.8;
+  padding: 16px 20px;
+  background: var(--off-white);
+  border-radius: 10px;
+  border-left: 3px solid var(--green);
+  margin-bottom: 20px;
+}
+
+.result-formula strong { color: var(--navy); }
+
+.result-note {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.result-note a {
+  color: var(--green);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(46,139,71,0.3);
+}
+
+@media (max-width: 768px) {
+  .insurance-calc-section { padding: 64px 5%; }
+  .calc-card-header { padding: 28px 24px 24px; }
+  .calc-body { padding: 28px 24px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .result-header { padding: 22px 24px; flex-direction: column; align-items: flex-start; gap: 12px; }
+  .result-body { padding: 24px; }
+  .result-amount { font-size: 1.9rem; }
+}
+
 </style>
 </head>
 <body>
@@ -1366,7 +1671,7 @@ a { text-decoration: none; }
     <div class="top-bar-divider top-bar-phone"></div>
     <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@broadmooraccounting.ca" target="_blank">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      info@broadmooraccounting.ca
+      <span class="__cf_email__" data-cfemail="b6dfd8d0d9f6d4c4d9d7d2dbd9d9c4d7d5d5d9c3d8c2dfd8d198d5d7">[email&#160;protected]</span>
     </a>
     <div class="top-bar-divider"></div>
     <a href="https://wa.me/18882867860" class="whatsapp-link" target="_blank">
@@ -1782,6 +2087,150 @@ a { text-decoration: none; }
   </section>
 
 
+  <!-- ── Insurance Coverage Calculator ── -->
+  <section class="insurance-calc-section" id="calculator">
+    <div class="insurance-calc-inner">
+
+      <div class="section-label">Interactive Tool</div>
+      <h2 class="section-heading">Insurance Coverage Calculator</h2>
+      <p class="section-subtext">Estimate the life insurance coverage your family needs. Fill in the fields below and click Calculate — then speak with one of our licensed advisors for a personalised plan.</p>
+
+      <div class="calc-card">
+        <div class="calc-card-header">
+          <h2>Life Insurance Coverage Calculator</h2>
+          <p>Estimate the amount of life insurance coverage your family would need to maintain their standard of living. Fill in all applicable fields below.</p>
+        </div>
+
+        <div class="calc-body">
+          <div class="form-grid">
+
+            <div class="form-section-divider"><span>Financial Needs</span></div>
+
+            <div class="field-group">
+              <label for="finalExpenses">Final Expenses</label>
+              <span class="field-hint">Funeral, estate, and end-of-life costs</span>
+              <div class="input-wrap has-prefix">
+                <span class="input-prefix">$</span>
+                <input type="number" id="finalExpenses" placeholder="15,000" min="0">
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="mortgage">Mortgage Balance</label>
+              <span class="field-hint">Outstanding mortgage on your home</span>
+              <div class="input-wrap has-prefix">
+                <span class="input-prefix">$</span>
+                <input type="number" id="mortgage" placeholder="350,000" min="0">
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="debt">Total Debts</label>
+              <span class="field-hint">Credit cards, loans, lines of credit</span>
+              <div class="input-wrap has-prefix">
+                <span class="input-prefix">$</span>
+                <input type="number" id="debt" placeholder="25,000" min="0">
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="emergencyFund">Emergency Fund</label>
+              <span class="field-hint">Buffer for unexpected expenses</span>
+              <div class="input-wrap has-prefix">
+                <span class="input-prefix">$</span>
+                <input type="number" id="emergencyFund" placeholder="20,000" min="0">
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="childEducation">Child Education</label>
+              <span class="field-hint">Post-secondary education savings target</span>
+              <div class="input-wrap has-prefix">
+                <span class="input-prefix">$</span>
+                <input type="number" id="childEducation" placeholder="80,000" min="0">
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="annualIncome">Annual Income</label>
+              <span class="field-hint">Gross annual income to be replaced</span>
+              <div class="input-wrap has-prefix">
+                <span class="input-prefix">$</span>
+                <input type="number" id="annualIncome" placeholder="75,000" min="0">
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="coveragePeriod">Coverage Period</label>
+              <span class="field-hint">Number of years income replacement needed</span>
+              <div class="input-wrap has-suffix">
+                <input type="number" id="coveragePeriod" placeholder="20" min="1" max="50">
+                <span class="input-suffix">yrs</span>
+              </div>
+            </div>
+
+            <div class="form-section-divider"><span>Existing Assets &amp; Coverage</span></div>
+
+            <div class="field-group negative">
+              <label for="savings">Savings &amp; Investments</label>
+              <span class="field-hint">RRSPs, TFSAs, bank accounts</span>
+              <div class="input-wrap has-prefix">
+                <span class="input-prefix">$</span>
+                <input type="number" id="savings" placeholder="50,000" min="0">
+              </div>
+            </div>
+
+            <div class="field-group negative">
+              <label for="existingInsurance">Existing Life Insurance</label>
+              <span class="field-hint">Group benefits or personal policies</span>
+              <div class="input-wrap has-prefix">
+                <span class="input-prefix">$</span>
+                <input type="number" id="existingInsurance" placeholder="100,000" min="0">
+              </div>
+            </div>
+
+            <div class="field-group negative">
+              <label for="otherAssets">Other Assets</label>
+              <span class="field-hint">Real estate equity, business value, etc.</span>
+              <div class="input-wrap has-prefix">
+                <span class="input-prefix">$</span>
+                <input type="number" id="otherAssets" placeholder="0" min="0">
+              </div>
+            </div>
+
+          </div><!-- /form-grid -->
+
+          <div class="calc-actions">
+            <button class="calc-btn" onclick="calculateInsurance()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              Calculate Coverage
+            </button>
+            <button class="calc-reset" onclick="resetInsurance()">Reset Fields</button>
+          </div>
+
+          <div class="result-box" id="insuranceResult">
+            <div class="result-header">
+              <div class="result-icon-wrap">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div class="result-header-text">
+                <h3>Recommended Coverage Amount</h3>
+                <div class="result-amount" id="insuranceAmount">$0</div>
+              </div>
+            </div>
+            <div class="result-body">
+              <div class="result-formula" id="insuranceFormula"></div>
+              <p class="result-note">This is an estimate based on the information provided. A negative result means your existing assets may already cover your family's needs. We recommend speaking with a <a href="#contact">Broadmoor licensed insurance advisor</a> to review your complete financial picture and tailor a plan to your goals.</p>
+            </div>
+          </div>
+
+        </div><!-- /calc-body -->
+      </div><!-- /calc-card -->
+
+    </div>
+  </section>
+
+
   <!-- ── Contact ── -->
   <section class="contact-section" id="contact">
     <div class="contact-inner">
@@ -1814,7 +2263,7 @@ a { text-decoration: none; }
               </div>
               <div>
                 <div class="cd-label">Email</div>
-                <div class="cd-value"><a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@broadmooraccounting.ca" target="_blank">info@broadmooraccounting.ca</a></div>
+                <div class="cd-value"><a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@broadmooraccounting.ca" target="_blank"><span class="__cf_email__" data-cfemail="e78e898188a785958886838a888895868484889289938e8980c98486">[email&#160;protected]</span></a></div>
               </div>
             </li>
             <li>
@@ -1973,7 +2422,7 @@ a { text-decoration: none; }
               <span class="fc-icon">
                 <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               </span>
-              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@broadmooraccounting.ca" target="_blank">info@broadmooraccounting.ca</a>
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@broadmooraccounting.ca" target="_blank"><span class="__cf_email__" data-cfemail="0e676068614e6c7c616f6a6361617c6f6d6d617b607a676069206d6f">[email&#160;protected]</span></a>
             </li>
             <li>
               <span class="fc-icon">🕐</span>
@@ -1998,6 +2447,61 @@ a { text-decoration: none; }
           <a href="#">Terms of Use</a>
           <div class="foo
 <script>
+
+/* ══════════════════════════
+   INSURANCE CALCULATOR
+══════════════════════════ */
+function calculateInsurance() {
+  const get = id => parseFloat(document.getElementById(id).value) || 0;
+
+  const finalExpenses  = get('finalExpenses');
+  const mortgage       = get('mortgage');
+  const debt           = get('debt');
+  const emergencyFund  = get('emergencyFund');
+  const childEducation = get('childEducation');
+  const annualIncome   = get('annualIncome');
+  const coveragePeriod = get('coveragePeriod');
+  const savings        = get('savings');
+  const existingIns    = get('existingInsurance');
+  const otherAssets    = get('otherAssets');
+
+  const incomeNeed  = annualIncome * coveragePeriod * 12;
+  const totalNeeds  = finalExpenses + mortgage + debt + emergencyFund + childEducation + incomeNeed;
+  const totalAssets = savings + existingIns + otherAssets;
+  const coverage    = totalNeeds - totalAssets;
+
+  const fmt = n => '$' + Math.abs(Math.round(n)).toLocaleString('en-CA');
+
+  const amtEl = document.getElementById('insuranceAmount');
+  amtEl.textContent = (coverage < 0 ? '-' : '') + fmt(coverage);
+  amtEl.className = 'result-amount' + (coverage < 0 ? ' negative-coverage' : '');
+
+  document.getElementById('insuranceFormula').innerHTML =
+    `<strong>Final Expenses:</strong> ${fmt(finalExpenses)}<br>` +
+    `<strong>+ Mortgage:</strong> ${fmt(mortgage)}<br>` +
+    `<strong>+ Debts:</strong> ${fmt(debt)}<br>` +
+    `<strong>+ Emergency Fund:</strong> ${fmt(emergencyFund)}<br>` +
+    `<strong>+ Child Education:</strong> ${fmt(childEducation)}<br>` +
+    `<strong>+ Income Replacement</strong> (${fmt(annualIncome)} × ${coveragePeriod} yrs × 12): ${fmt(incomeNeed)}<br>` +
+    `<strong>− Savings:</strong> ${fmt(savings)}<br>` +
+    `<strong>− Existing Life Insurance:</strong> ${fmt(existingIns)}<br>` +
+    `<strong>− Other Assets:</strong> ${fmt(otherAssets)}<br>` +
+    `<strong style="color:var(--green)">= Recommended Coverage: ${(coverage < 0 ? '-' : '') + fmt(coverage)}</strong>`;
+
+  const resultBox = document.getElementById('insuranceResult');
+  resultBox.classList.remove('visible');
+  void resultBox.offsetWidth;
+  resultBox.classList.add('visible');
+  resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function resetInsurance() {
+  ['finalExpenses','mortgage','debt','emergencyFund','childEducation',
+   'annualIncome','coveragePeriod','savings','existingInsurance','otherAssets']
+    .forEach(id => document.getElementById(id).value = '');
+  document.getElementById('insuranceResult').classList.remove('visible');
+}
+
 // ── Scroll: shrink header ──────────────────────────────────────────────
 const siteHeader = document.getElementById('siteHeader');
 window.addEventListener('scroll', () => {
@@ -2048,17 +2552,4 @@ if (contactForm) {
       } else {
         throw new Error(data.message || 'Submission failed');
       }
-    } catch (err) {
-      btn.innerHTML = '❌ Something went wrong. Please try again.';
-      btn.style.background = '#c0392b';
-      setTimeout(() => {
-        btn.innerHTML = originalHTML;
-        btn.style.background = '';
-        btn.disabled = false;
-      }, 4000);
-    }
-  });
-}
-</script>
-</body>
-</html>
+    } cat

@@ -135,7 +135,7 @@ document.getElementById("navbar-placeholder").innerHTML = `<!--
       </li>
 
       <li>
-        <a href="financial-calculators.html" class="nav-calc" style="border:1.5px solid currentColor;border-radius:6px;padding:5px 12px;">🧮 Financial Calculators</a>
+        <a href="financial-calculators.html" class="nav-calc" style="background:#1a2b4a;color:#fff;border-radius:8px;padding:7px 14px;font-weight:600;display:inline-flex;align-items:center;gap:6px;border:none;">🧮 Financial Calculators</a>
       </li>
 
     </ul><!-- /.nav-menu -->

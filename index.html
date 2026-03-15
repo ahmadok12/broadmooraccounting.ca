@@ -4473,33 +4473,15 @@ textarea::placeholder {
     document.getElementById('mort-badge').textContent     = termYrs + 'yr · ' + annRate + '% p.a.';
     document.getElementById('mort-total').textContent     = fmtCurrency(totalCost);
     document.getElementById('mort-interest').textContent  = fmtCurrency(totalInterest);
-    document.getElementById('mort-intere
+    document.getElementById('mort-interest-note').textContent = '';
+  }
+</script>
 </div><!-- /.page-wrap -->
 
 <!-- ═══ FOOTER (loaded from footer.html) ═══ -->
 <div id="footer-placeholder"></div>
-<script>
-  function loadComponent(id, file, callback) {
-    fetch(file)
-      .then(function(res) { return res.text(); })
-      .then(function(html) {
-        var el = document.getElementById(id);
-        el.innerHTML = html;
-        var scripts = el.querySelectorAll('script');
-        scripts.forEach(function(oldScript) {
-          var newScript = document.createElement('script');
-          Array.from(oldScript.attributes).forEach(function(attr) {
-            newScript.setAttribute(attr.name, attr.value);
-          });
-          newScript.textContent = oldScript.textContent;
-          oldScript.parentNode.replaceChild(newScript, oldScript);
-        });
-        if (callback) callback();
-      })
-      .catch(function(err) { console.warn('Could not load ' + file, err); });
-  }
-  loadComponent('navbar-placeholder', 'navbar.html');
-  loadComponent('footer-placeholder', 'footer.html');
-</script>
+
+<script src="navbar.js"></script>
+<script src="footer.js"></script>
 </body>
 </html>

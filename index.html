@@ -4218,7 +4218,7 @@ textarea::placeholder {
           </div>
           <div class="contact-info-text">
             <span class="contact-info-label">Email Us</span>
-            <a href="https://mail.google.com/mail/?view=cm&to=info@broadmooraccounting.ca" target="_blank" class="contact-info-value">info@broadmooraccounting.ca</a>
+            <a href="https://mail.google.com/mail/?view=cm&to=info@broadmooraccounting.ca" target="_blank" class="contact-info-value"><span class="__cf_email__" data-cfemail="a6cfc8c0c9e6c4d4c9c7c2cbc9c9d4c7c5c5c9d3c8d2cfc8c188c5c7">[email&#160;protected]</span></a>
           </div>
         </div>
 
@@ -4345,7 +4345,7 @@ textarea::placeholder {
   <!-- ═══ FOOTER ═══ -->
   
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const btns   = document.querySelectorAll('.tab-btn');
   const panels = document.querySelectorAll('.tab-panel');
   const nav    = document.getElementById('tabNav');
@@ -4478,18 +4478,28 @@ textarea::placeholder {
 
 <!-- ═══ FOOTER (loaded from footer.html) ═══ -->
 <div id="footer-placeholder"></div>
-
 <script>
-  // Load shared navbar and footer from separate files
-  function loadComponent(id, file) {
+  function loadComponent(id, file, callback) {
     fetch(file)
       .then(function(res) { return res.text(); })
-      .then(function(html) { document.getElementById(id).innerHTML = html; })
+      .then(function(html) {
+        var el = document.getElementById(id);
+        el.innerHTML = html;
+        var scripts = el.querySelectorAll('script');
+        scripts.forEach(function(oldScript) {
+          var newScript = document.createElement('script');
+          Array.from(oldScript.attributes).forEach(function(attr) {
+            newScript.setAttribute(attr.name, attr.value);
+          });
+          newScript.textContent = oldScript.textContent;
+          oldScript.parentNode.replaceChild(newScript, oldScript);
+        });
+        if (callback) callback();
+      })
       .catch(function(err) { console.warn('Could not load ' + file, err); });
   }
   loadComponent('navbar-placeholder', 'navbar.html');
   loadComponent('footer-placeholder', 'footer.html');
 </script>
-
 </body>
 </html>

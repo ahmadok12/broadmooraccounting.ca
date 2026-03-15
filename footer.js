@@ -87,6 +87,7 @@ document.getElementById("footer-placeholder").innerHTML = `<!--
           <li><a href="#">Testimonials</a></li>
           <li><a href="#">Partners</a></li>
           <li><a href="contact-us.html">Contact Us</a></li>
+          <li><a href="financial-calculators.html">🧮 Financial Calculators</a></li>
         </ul>
       </div>
 
@@ -126,7 +127,7 @@ document.getElementById("footer-placeholder").innerHTML = `<!--
                 <polyline points="22,6 12,13 2,6"/>
               </svg>
             </span>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@broadmooraccounting.ca" target="_blank" rel="noopener">
+            <a href="mailto:info@broadmooraccounting.ca" rel="noopener">
               info@broadmooraccounting.ca
             </a>
           </li>
@@ -140,7 +141,7 @@ document.getElementById("footer-placeholder").innerHTML = `<!--
         </ul><!-- /.footer-contact-list -->
 
         <!-- WhatsApp CTA -->
-        <a href="https://wa.me/18882867860" class="footer-whatsapp" target="_blank" rel="noopener">
+        <a href="https://wa.me/17804098694" class="footer-whatsapp" target="_blank" rel="noopener">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="#25d366">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
             <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.532 5.85L0 24l6.335-1.51A11.933 11.933 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.792 9.792 0 01-5.032-1.388l-.36-.214-3.762.897.944-3.67-.235-.375A9.79 9.79 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/>

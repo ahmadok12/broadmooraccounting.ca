@@ -658,6 +658,55 @@ header nav {
   margin-top: 10px;
 }
 
+/* Mobile phone number + icon row */
+.mobile-phone-number {
+  display: block;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--navy) !important;
+  text-decoration: none;
+  margin-top: 18px;
+  letter-spacing: 0.04em;
+}
+
+.mobile-contact-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+  justify-content: center;
+}
+
+.mobile-contact-icons a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.mobile-contact-icons .mci-email {
+  background: #fdf3e8;
+  color: #d97706 !important;
+}
+.mobile-contact-icons .mci-email:hover { background: #fbe5c3; }
+
+.mobile-contact-icons .mci-whatsapp {
+  background: #e8f9ef;
+  color: #128c3e !important;
+}
+.mobile-contact-icons .mci-whatsapp:hover { background: #c3f0d5; }
+
+.mobile-contact-icons .mci-location {
+  background: #e8f4fd;
+  color: #1a73e8 !important;
+}
+.mobile-contact-icons .mci-location:hover { background: #d2e9fb; }
+
 /* ═══════════════════════════
    HERO
 ═══════════════════════════ */
@@ -3602,7 +3651,7 @@ textarea::placeholder {
 <div class="top-bar">
   <a href="https://mail.google.com/mail/?view=cm&to=info@broadmooraccounting.ca" target="_blank">
     <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-    info@broadmooraccounting.ca
+    <span class="__cf_email__" data-cfemail="325b5c545d7250405d53565f5d5d405351515d475c465b5c551c5153">[email&#160;protected]</span>
   </a>
   <div class="top-bar-divider"></div>
   <a href="https://maps.google.com/?q=Broadmoor+Accounting+Financials" class="maps-link" target="_blank">
@@ -3610,7 +3659,12 @@ textarea::placeholder {
     Find Us on Maps
   </a>
   <div class="top-bar-divider"></div>
-  <a href="https://wa.me/18882867860" class="whatsapp-link" target="_blank">
+  <a href="tel:+17804098694">
+    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .93h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+    +1 780 409 8694
+  </a>
+  <div class="top-bar-divider"></div>
+  <a href="https://wa.me/17804098694" class="whatsapp-link" target="_blank">
     <svg width="15" height="15" viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.532 5.85L0 24l6.335-1.51A11.933 11.933 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.792 9.792 0 01-5.032-1.388l-.36-.214-3.762.897.944-3.67-.235-.375A9.79 9.79 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>
     +1 888 286 7860
   </a>
@@ -3689,14 +3743,20 @@ textarea::placeholder {
       <li><a href="contact-us.html">Contact Us</a></li>
     </ul>
     <a href="#contact-section" class="mobile-book" onclick="document.getElementById('contact-section').scrollIntoView({behavior:'smooth'});document.getElementById('mobileNav').classList.remove('open');return false;">📅 Book Free Consultation</a>
-    <a href="https://maps.google.com/?q=Broadmoor+Accounting+Financials" class="mobile-maps" target="_blank">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      Find Us on Google Maps
+    <a href="tel:+17804098694" class="mobile-phone-number">
+      📞 +1 780 409 8694
     </a>
-    <a href="https://wa.me/18882867860" class="mobile-whatsapp" target="_blank">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="#128c3e"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.532 5.85L0 24l6.335-1.51A11.933 11.933 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.792 9.792 0 01-5.032-1.388l-.36-.214-3.762.897.944-3.67-.235-.375A9.79 9.79 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>
-      +1 888 286 7860
-    </a>
+    <div class="mobile-contact-icons">
+      <a href="https://mail.google.com/mail/?view=cm&to=info@broadmooraccounting.ca" class="mci-email" target="_blank" aria-label="Email">
+        <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+      </a>
+      <a href="https://wa.me/17804098694" class="mci-whatsapp" target="_blank" aria-label="WhatsApp">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#128c3e"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.532 5.85L0 24l6.335-1.51A11.933 11.933 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.792 9.792 0 01-5.032-1.388l-.36-.214-3.762.897.944-3.67-.235-.375A9.79 9.79 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>
+      </a>
+      <a href="https://maps.google.com/?q=Broadmoor+Accounting+Financials" class="mci-location" target="_blank" aria-label="Location">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </a>
+    </div>
   </div>
 </div>
 
@@ -3894,7 +3954,7 @@ textarea::placeholder {
 
 
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function () {
   const strip = document.getElementById('partnersStrip');
   const track = document.getElementById('partnersTrack');
@@ -4999,7 +5059,7 @@ textarea::placeholder {
           </div>
           <div class="contact-info-text">
             <span class="contact-info-label">Email Us</span>
-            <a href="https://mail.google.com/mail/?view=cm&to=info@broadmooraccounting.ca" target="_blank" class="contact-info-value">info@broadmooraccounting.ca</a>
+            <a href="https://mail.google.com/mail/?view=cm&to=info@broadmooraccounting.ca" target="_blank" class="contact-info-value"><span class="__cf_email__" data-cfemail="2d44434b426d4f5f424c494042425f4c4e4e4258435944434a034e4c">[email&#160;protected]</span></a>
           </div>
         </div>
 
@@ -5033,7 +5093,7 @@ textarea::placeholder {
 
       </div>
 
-      <a href="https://wa.me/18882867860" class="contact-whatsapp-btn" target="_blank">
+      <a href="https://wa.me/17804098694" class="contact-whatsapp-btn" target="_blank">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.532 5.85L0 24l6.335-1.51A11.933 11.933 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.792 9.792 0 01-5.032-1.388l-.36-.214-3.762.897.944-3.67-.235-.375A9.79 9.79 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>
         Chat on WhatsApp
       </a>
@@ -5195,14 +5255,14 @@ textarea::placeholder {
               <span class="fc-icon">
                 <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               </span>
-              <a href="https://mail.google.com/mail/?view=cm&to=info@broadmooraccounting.ca" target="_blank">info@broadmooraccounting.ca</a>
+              <a href="https://mail.google.com/mail/?view=cm&to=info@broadmooraccounting.ca" target="_blank"><span class="__cf_email__" data-cfemail="670e0901082705150806030a080815060404081209130e0900490406">[email&#160;protected]</span></a>
             </li>
             <li>
               <span class="fc-icon">🕐</span>
               <span>Mon–Fri: 8:30 AM – 6:00 PM<br>Sat: 10:00 AM – 3:00 PM</span>
             </li>
           </ul>
-          <a href="https://wa.me/18882867860" class="footer-whatsapp" target="_blank">
+          <a href="https://wa.me/17804098694" class="footer-whatsapp" target="_blank">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.532 5.85L0 24l6.335-1.51A11.933 11.933 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.792 9.792 0 01-5.032-1.388l-.36-.214-3.762.897.944-3.67-.235-.375A9.79 9.79 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>
             Chat on WhatsApp
           </a>
@@ -5226,7 +5286,7 @@ textarea::placeholder {
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const btns   = document.querySelectorAll('.tab-btn');
   const panels = document.querySelectorAll('.tab-panel');
   const nav    = document.getElementById('tabNav');
@@ -5347,11 +5407,4 @@ textarea::placeholder {
 
     const totalCost     = monthly * n;
     const totalInterest = totalCost - principal;
-    const pPct          = Math.round((principal / totalCost) * 100);
-    const iPct          = 100 - pPct;
-
-    document.getElementById('mort-monthly').textContent   = monthly.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    document.getElementById('mort-badge').textContent     = termYrs + 'yr · ' + annRate + '% p.a.';
-    document.getElementById('mort-total').textContent     = fmtCurrency(totalCost);
-    document.getElementById('mort-interest').textContent  = fmtCurrency(totalInterest);
-    document.getElementById('mort-intere
+    const pPct          = Math.round((principal / to

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Accounting & Professional Services – Broadmoor Accounting & Financials</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <style>
 /* ═══════════════════════════════
    CSS VARIABLES
@@ -1268,23 +1269,20 @@ a { text-decoration: none; }
         }
       } catch (err) {
         submitBtn.disabled = false;
-        submitBtn.innerHTML = '
+        submitBtn.innerHTML = '&#9888; Send Failed. Please try again.';
+      }
+    }
+  });
+</script>
 </div><!-- /.page-wrap -->
 
 <!-- ═══ FOOTER (loaded from footer.html) ═══ -->
 <div id="footer-placeholder"></div>
 
-<script>
-  // Load shared navbar and footer from separate files
-  function loadComponent(id, file) {
-    fetch(file)
-      .then(function(res) { return res.text(); })
-      .then(function(html) { document.getElementById(id).innerHTML = html; })
-      .catch(function(err) { console.warn('Could not load ' + file, err); });
-  }
-  loadComponent('navbar-placeholder', 'navbar.html');
-  loadComponent('footer-placeholder', 'footer.html');
-</script>
 
+
+
+<script src="navbar.js"></script>
+<script src="footer.js"></script>
 </body>
 </html>

@@ -1050,8 +1050,8 @@ header nav {
   .hamburger { display: flex; }
   header nav, body > nav, .site-header-wrap > nav { height: 60px; }
   .nav-logo img { height: 46px; }
-
-  .hero {
+  body { padding-top: 60px; }
+  .top-bar { display: none; }
     grid-template-columns: 1fr;
     min-height: auto;
   }
@@ -1064,7 +1064,7 @@ header nav {
   .stat-card, .rating-card { display: none; }
   .proof-bar { padding: 14px 4%; gap: 8px; }
   .proof-item { padding: 7px 14px 7px 7px; }
-  .top-bar { justify-content: center; font-size: 11.5px; padding: 7px 4%; }
+  .top-bar { display: none; }
 }
 
 @media (max-width: 480px) {

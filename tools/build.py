@@ -126,9 +126,9 @@ def strip_tags(t: str) -> str:
 def faq_items(text: str):
     items = []
     for m in re.finditer(
-        r'class="faq-question"[^>]*>\s*<span>(.*?)</span>.*?class="faq-answer">(.*?)</div>', text, re.S
+        r'class="faq-question"[^>]*>(.*?)</button>\s*<div class="faq-answer">(.*?)</div>', text, re.S
     ):
-        q, a = strip_tags(m.group(1)), strip_tags(m.group(2))
+        q, a = strip_tags(m.group(1)).rstrip("+ ").strip(), strip_tags(m.group(2))
         if q and a:
             items.append({"@type": "Question", "name": q,
                           "acceptedAnswer": {"@type": "Answer", "text": a}})

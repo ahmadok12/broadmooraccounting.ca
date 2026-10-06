@@ -1340,7 +1340,7 @@ html { scroll-behavior: smooth; }
   border-radius: 2px;
 }
 
-.page-header h1 {
+.page-header h1, .page-header h2 {
   font-family: 'Playfair Display', serif;
   font-size: clamp(1.9rem, 3.5vw, 2.9rem);
   font-weight: 900;
@@ -1350,7 +1350,7 @@ html { scroll-behavior: smooth; }
   position: relative;
 }
 
-.page-header h1 em {
+.page-header h1 em, .page-header h2 em {
   font-style: italic;
   color: var(--green-light);
 }
@@ -3200,17 +3200,17 @@ textarea::placeholder {
   <div class="hero-content">
     <div class="eyebrow">
       <span class="eyebrow-line"></span>
-      Trusted Financial Advisors Since 2008
+      Accounting · Tax · Financial Services — Sherwood Park, AB
     </div>
 
     <h1 class="hero-title">
-      Your Finances,<br>
-      <em>Expertly Guided.</em><br>
-      Always.
+      Accounting &amp; Tax for<br>
+      <em>Sherwood Park &amp; Edmonton.</em><br>
+      Expertly Guided.
     </h1>
 
     <p class="hero-subtitle">
-      From tax planning and bookkeeping to insurance and financial strategy — Broadmoor delivers clarity, confidence, and results for individuals and businesses across Canada.
+      From tax planning and bookkeeping to insurance and financial strategy — Broadmoor helps individuals, families and small businesses in Sherwood Park, Edmonton and across Alberta stay organized, CRA-ready and confident about their finances.
     </p>
 
     <div class="cta-group">
@@ -3235,59 +3235,57 @@ textarea::placeholder {
 
   <!-- Right: Image -->
   <div class="hero-visual">
-    <img src="assets/img/hero-advisors.webp" alt="Broadmoor team advising clients" />
+    <img src="assets/img/hero-advisors.webp" alt="Financial advisor meeting with clients in an office" width="1400" height="781" fetchpriority="high" />
     <div class="rating-card">
-      <div class="rating-stars">
-        <span class="star">★</span><span class="star">★</span><span class="star">★</span>
-        <span class="star">★</span><span class="star">★</span>
-      </div>
-      <div class="rating-score">4.9 / 5.0</div>
-      <div class="rating-text">Based on 340+ reviews</div>
+      <div class="rating-score">Free</div>
+      <div class="rating-text">Initial consultation — in person, phone or video</div>
     </div>
     <div class="stat-card">
-      <div class="stat-card-num">1,800<span>+</span></div>
-      <div class="stat-card-label">Clients across Canada</div>
+      <div class="stat-card-num">T1 · T2<span>.</span></div>
+      <div class="stat-card-label">Personal &amp; corporate returns</div>
     </div>
   </div>
 </section>
 
+<!-- Proof bar: client counts, ratings, retention and "years in business" figures were removed until
+     the client can substantiate them (Competition Act s.52 / s.74.01). Re-add only verifiable numbers. -->
 <div class="proof-bar">
   <div class="proof-item">
-    <div class="proof-icon">🇨🇦</div>
+    <div class="proof-icon">📍</div>
     <div class="proof-text">
-      <div class="proof-num">1,800<sup>+</sup></div>
-      <div class="proof-label">Clients Across Canada</div>
+      <div class="proof-num">Local</div>
+      <div class="proof-label">Sherwood Park office, serving Edmonton</div>
     </div>
   </div>
   <div class="proof-item">
-    <div class="proof-icon">🏆</div>
+    <div class="proof-icon">🗓️</div>
     <div class="proof-text">
-      <div class="proof-num">15<sup>+</sup></div>
-      <div class="proof-label">Years of Excellence</div>
+      <div class="proof-num">Year-round</div>
+      <div class="proof-label">Support beyond tax season</div>
     </div>
   </div>
   <div class="proof-item">
-    <div class="proof-icon">🤝</div>
+    <div class="proof-icon">🧾</div>
     <div class="proof-text">
-      <div class="proof-num">98<sup>%</sup></div>
-      <div class="proof-label">Client Retention Rate</div>
+      <div class="proof-num">CRA</div>
+      <div class="proof-label">Correspondence &amp; review support</div>
     </div>
   </div>
   <div class="proof-item">
-    <div class="proof-icon">⭐</div>
+    <div class="proof-icon">💬</div>
     <div class="proof-text">
-      <div class="proof-num">4.9<sup>/5</sup></div>
-      <div class="proof-label">Average Rating</div>
+      <div class="proof-num">Free</div>
+      <div class="proof-label">No-obligation first consultation</div>
     </div>
   </div>
 </div>
-
 <!-- PARTNERS SECTION -->
 <section class="partners-section" id="partners-section">
   <div class="partners-header">
-    <div class="partners-eyebrow">Trusted By</div>
-    <h2 class="partners-title">Our Partners</h2>
-    <p class="partners-sub">We work with Canada's most respected financial institutions to bring you the very best solutions.</p>
+    <!-- TODO(client): keep only carriers/providers the advisors are currently contracted with. -->
+    <div class="partners-eyebrow">Insurers &amp; Providers</div>
+    <h2 class="partners-title">Companies We Work With</h2>
+    <p class="partners-sub">Insurance and related products may be arranged with these and other Canadian providers through our licensed advisors and partners. Logos are trademarks of their respective owners and do not imply endorsement of Broadmoor.</p>
   </div>
   <div class="partners-strip" id="partnersStrip">
     <div class="partners-fade-l"></div>
@@ -3352,7 +3350,7 @@ textarea::placeholder {
         <img src="assets/img/partner-humania-assurance.webp" alt="">
       </div>
 <div class="p-card" aria-hidden="true">
-        <img src="assets/img/img-b35a6daf.webp" alt="">
+        <img src="assets/img/partner-manulife.webp" alt="">
       </div>
 <div class="p-card" aria-hidden="true">
         <img src="assets/img/partner-desjardins.webp" alt="">
@@ -3867,7 +3865,7 @@ textarea::placeholder {
     <div class="eyebrow-line"></div>
     Financial Planning Tools
   </div>
-  <h1>Plan with <em>Confidence</em></h1>
+  <h2>Plan with <em>Confidence</em></h2>
   <p>Use our calculators to estimate your life insurance coverage needs and monthly mortgage repayments — all in one place.</p>
 </div>
 
@@ -3988,7 +3986,7 @@ textarea::placeholder {
 
       <div class="ins-breakdown" id="ins-breakdown"></div>
 
-      <p class="result-disclaimer">Estimate based on the DIME+ method. Consult a licensed advisor for personalised recommendations.</p>
+      <p class="result-disclaimer">Rough estimate only (needs-based method: debts + income replacement + education − existing assets). It does not account for inflation, taxes or investment returns and is not a recommendation to buy insurance. Speak with a licensed life insurance advisor.</p>
     </div>
   </div>
 
@@ -4001,7 +3999,7 @@ textarea::placeholder {
       <div class="calc-icon">🏠</div>
       <div class="calc-card-header-text">
         <div class="calc-title">Mortgage Calculator</div>
-        <div class="calc-subtitle">Declining balance · standard amortisation</div>
+        <div class="calc-subtitle">Canadian semi-annual compounding · amortization</div>
       </div>
     </div>
 
@@ -4027,12 +4025,12 @@ textarea::placeholder {
           </div>
         </div>
         <div class="field">
-          <label for="m_term">Loan Term</label>
+          <label for="m_term">Amortization</label>
           <div class="input-wrap has-right">
             <input type="number" id="m_term" placeholder="30" min="1" max="50" style="padding-left:10px;">
             <span class="input-affix right" style="font-size:11px;">yrs</span>
           </div>
-          <span class="field-hint">e.g. 10, 15, 20, 30</span>
+          <span class="field-hint">Years, e.g. 25 or 30</span>
         </div>
         <div class="field">
           <label for="m_rate">Interest Rate</label>
@@ -4090,7 +4088,7 @@ textarea::placeholder {
         </div>
       </div>
 
-      <p class="result-disclaimer">Based on standard declining balance (amortisation) formula. Figures are estimates only.</p>
+      <p class="result-disclaimer">Assumes a fixed rate compounded semi-annually (the Canadian standard) and monthly payments. Excludes mortgage default insurance premiums, property tax and fees. Estimates only — not a quote or approval.</p>
     </div>
   </div>
 
@@ -4331,7 +4329,7 @@ textarea::placeholder {
 
     <!-- CTA bar -->
     <div class="cta-bar">
-      <p class="cta-copy"><strong>Ready to switch to the smarter way?</strong><br>Join hundreds of Canadians who trust Broadmoor with their full financial picture.</p>
+      <p class="cta-copy"><strong>Ready to switch to the smarter way?</strong><br>Bring your whole financial picture to one team.</p>
       <button class="btn-green" onclick="document.getElementById('contact-section').scrollIntoView({behavior:'smooth'})">
         Book a Consultation
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -4344,136 +4342,7 @@ textarea::placeholder {
 </section>
 
   <!-- ═══ 5. broadmoor-reviews.html ═══ -->
-  <section class="reviews-section" id="reviews-section">
-  <div class="reviews-inner">
-
-    <!-- Header -->
-    <div class="reviews-header">
-      <div class="reviews-header-left">
-        <div class="eyebrow-pill">
-          <div class="eyebrow-line"></div>
-          Client Testimonials
-        </div>
-        <h2 class="reviews-title">Trusted by businesses<br><em>across Canada</em></h2>
-        <p class="reviews-subtitle">Over 500 clients have relied on Broadmoor for clarity, confidence, and peace of mind with their finances.</p>
-      </div>
-
-      <div class="reviews-meta">
-        <div class="rating-big">
-          <div class="rating-big-num">4.9</div>
-          <div class="rating-big-stars">★★★★★</div>
-          <div class="rating-big-label">Average Rating</div>
-        </div>
-        <div class="trust-pills">
-          <div class="trust-pill"><span class="dot"></span>500+ Clients</div>
-          <div class="trust-pill"><span class="dot"></span>Google Verified</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Featured quote -->
-    <div class="featured-quote">
-      <div class="featured-quote-mark">"</div>
-      <div class="featured-quote-body">
-        <p class="featured-quote-text">Broadmoor transformed how we think about our finances. After years of scrambling each tax season, they put a proper system in place — proactive, transparent, and always available when we have questions. Our business has never been in better shape.</p>
-        <div class="featured-quote-author">
-          <div class="author-avatar">DM</div>
-          <div>
-            <div class="author-name">David & Michelle Tremblay</div>
-            <div class="author-role">Co-founders, Tremblay Fine Catering · Montréal, QC</div>
-          </div>
-        </div>
-      </div>
-      <div class="featured-stars">★★★★★</div>
-    </div>
-
-    <!-- Review grid -->
-    <div class="reviews-grid">
-
-      <div class="review-card">
-        <div class="review-top">
-          <div class="review-stars">★★★★★</div>
-          <div class="review-tag">Tax Planning</div>
-        </div>
-        <p class="review-text">Switched to Broadmoor three years ago and haven't looked back. They identified deductions my previous accountant had missed for years — the savings alone paid for their fees several times over.</p>
-        <div class="review-divider"></div>
-        <div class="review-author">
-          <div class="review-avatar">SR</div>
-          <div>
-            <div class="review-name">Sonia Reyes</div>
-            <div class="review-detail">Self-employed Consultant · Vancouver, BC</div>
-          </div>
-          <div class="review-verified">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Verified
-          </div>
-        </div>
-      </div>
-
-      <div class="review-card">
-        <div class="review-top">
-          <div class="review-stars">★★★★★</div>
-          <div class="review-tag">Bookkeeping</div>
-        </div>
-        <p class="review-text">The monthly bookkeeping reports are clear, timely, and genuinely useful for decision-making. I finally feel in control of my numbers. The team is always responsive and never makes me feel like a bother.</p>
-        <div class="review-divider"></div>
-        <div class="review-author">
-          <div class="review-avatar green">JK</div>
-          <div>
-            <div class="review-name">James Kowalski</div>
-            <div class="review-detail">Owner, Kowalski Hardware · Ottawa, ON</div>
-          </div>
-          <div class="review-verified">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Verified
-          </div>
-        </div>
-      </div>
-
-      <div class="review-card">
-        <div class="review-top">
-          <div class="review-stars">★★★★★</div>
-          <div class="review-tag">Corporate</div>
-        </div>
-        <p class="review-text">We engaged Broadmoor for a complex corporate restructure. Their advice was precise and strategic. They translated complicated tax implications into plain language and guided us every step of the way.</p>
-        <div class="review-divider"></div>
-        <div class="review-author">
-          <div class="review-avatar">PL</div>
-          <div>
-            <div class="review-name">Priya Lal</div>
-            <div class="review-detail">CFO, Lal Group Holdings · Toronto, ON</div>
-          </div>
-          <div class="review-verified">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Verified
-          </div>
-        </div>
-      </div>
-
-      <div class="review-card">
-        <div class="review-top">
-          <div class="review-stars">★★★★★</div>
-          <div class="review-tag">Personal Tax</div>
-        </div>
-        <p class="review-text">As a freelancer with multiple income streams, my return used to be a nightmare. Broadmoor made it painless. They're proactive about reminding me what I need to gather, and the turnaround is fast every year.</p>
-        <div class="review-divider"></div>
-        <div class="review-author">
-          <div class="review-avatar green">AM</div>
-          <div>
-            <div class="review-name">Alexia Moreau</div>
-            <div class="review-detail">Freelance Designer · Calgary, AB</div>
-          </div>
-          <div class="review-verified">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Verified
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
+  <!-- Testimonials section removed pending verification — see tools/drafts/reviews-section.html -->
 
   <!-- ═══ 6. Contact Section ═══ -->
   <section class="contact-section" id="contact-section">

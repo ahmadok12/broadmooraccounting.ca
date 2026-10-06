@@ -63,6 +63,14 @@
     });
   })();
 
+  /* ── FAQ accordion (used by onclick="toggleFaq(this)") ─ */
+  window.toggleFaq = function (btn) {
+    var item = btn.closest('.faq-item');
+    if (!item) return;
+    var open = item.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  };
+
   /* ── Footer year ─────────────────────────────────────── */
   var yearEl = document.getElementById('footerYear');
   if (yearEl) yearEl.textContent = new Date().getFullYear();

@@ -1,0 +1,213 @@
+<!-- Removed from index.html until the client confirms which insurers its licensed advisors are contracted with.
+     Re-insert below the proof bar. Keep the trademark / no-endorsement note. -->
+<!-- PARTNERS SECTION -->
+<section class="partners-section" id="partners-section">
+  <div class="partners-header">
+    <!-- TODO(client): keep only carriers/providers the advisors are currently contracted with. -->
+    <div class="partners-eyebrow">Insurers &amp; Providers</div>
+    <h2 class="partners-title">Companies We Work With</h2>
+    <p class="partners-sub">Insurance and related products may be arranged with these and other Canadian providers through our licensed advisors and partners. Logos are trademarks of their respective owners and do not imply endorsement of Broadmoor.</p>
+  </div>
+  <div class="partners-strip" id="partnersStrip">
+    <div class="partners-fade-l"></div>
+    <div class="partners-fade-r"></div>
+    <div class="partners-track" id="partnersTrack">
+      <!-- Set 1 -->
+
+<div class="p-card">
+        <img src="assets/img/partner-serenia-life-financial.webp" alt="Serenia Life Financial">
+      </div>
+
+<div class="p-card">
+        <img src="assets/img/partner-humania-assurance.webp" alt="Humania Assurance">
+      </div>
+
+<div class="p-card">
+        <img src="assets/img/partner-manulife.webp" alt="Manulife">
+      </div>
+
+<div class="p-card">
+        <img src="assets/img/partner-desjardins.webp" alt="Desjardins">
+      </div>
+
+<div class="p-card">
+        <img src="assets/img/partner-travelance.webp" alt="Travelance">
+      </div>
+
+<div class="p-card">
+        <img src="assets/img/partner-medavie-blue-cross.webp" alt="Medavie Blue Cross">
+      </div>
+
+<div class="p-card">
+        <img src="assets/img/partner-experior-financial-group.webp" alt="Experior Financial Group">
+      </div>
+
+<div class="p-card">
+        <img src="assets/img/partner-beneva.webp" alt="beneva">
+      </div>
+
+<div class="p-card">
+        <img src="assets/img/partner-destination-travel-group.webp" alt="Destination Travel Group">
+      </div>
+
+<div class="p-card">
+        <img src="assets/img/partner-faithlife-financial.webp" alt="FaithLife Financial">
+      </div>
+
+<div class="p-card">
+        <img src="assets/img/partner-ia-financial-group.svg" alt="iA Financial Group">
+      </div>
+
+<div class="p-card">
+        <img src="assets/img/partner-foresters-financial.webp" alt="Foresters Financial">
+      </div>
+
+      <!-- Set 2 — duplicate for seamless loop -->
+
+<div class="p-card" aria-hidden="true">
+        <img src="assets/img/partner-serenia-life-financial.webp" alt="">
+      </div>
+<div class="p-card" aria-hidden="true">
+        <img src="assets/img/partner-humania-assurance.webp" alt="">
+      </div>
+<div class="p-card" aria-hidden="true">
+        <img src="assets/img/partner-manulife.webp" alt="">
+      </div>
+<div class="p-card" aria-hidden="true">
+        <img src="assets/img/partner-desjardins.webp" alt="">
+      </div>
+<div class="p-card" aria-hidden="true">
+        <img src="assets/img/partner-travelance.webp" alt="">
+      </div>
+<div class="p-card" aria-hidden="true">
+        <img src="assets/img/partner-medavie-blue-cross.webp" alt="">
+      </div>
+<div class="p-card" aria-hidden="true">
+        <img src="assets/img/partner-experior-financial-group.webp" alt="">
+      </div>
+<div class="p-card" aria-hidden="true">
+        <img src="assets/img/partner-beneva.webp" alt="">
+      </div>
+<div class="p-card" aria-hidden="true">
+        <img src="assets/img/partner-destination-travel-group.webp" alt="">
+      </div>
+<div class="p-card" aria-hidden="true">
+        <img src="assets/img/partner-faithlife-financial.webp" alt="">
+      </div>
+<div class="p-card" aria-hidden="true">
+        <img src="assets/img/partner-ia-financial-group.svg" alt="">
+      </div>
+<div class="p-card" aria-hidden="true">
+        <img src="assets/img/partner-foresters-financial.webp" alt="">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+(function () {
+  const strip = document.getElementById('partnersStrip');
+  const track = document.getElementById('partnersTrack');
+
+  // Start auto scroll
+  track.classList.add('scrolling');
+
+  let dragging = false, startX = 0, curX = 0, vel = 0, lastX = 0, lastT = 0, raf = null;
+
+  function getHalf() { return track.scrollWidth / 2; }
+
+  function pauseAndCapture() {
+    // Capture current animated position
+    track.classList.add('paused');
+    const m = new DOMMatrix(window.getComputedStyle(track).transform);
+    curX = m.m41;
+    track.classList.remove('scrolling');
+    track.classList.remove('paused');
+    track.style.transform = 'translateX(' + curX + 'px)';
+  }
+
+  function move(dx) {
+    curX += dx;
+    const h = getHalf();
+    if (curX <= -h) curX += h;
+    if (curX > 0)   curX -= h;
+    track.style.transform = 'translateX(' + curX + 'px)';
+  }
+
+  function resume() {
+    track.style.transform = '';
+    track.classList.add('scrolling');
+  }
+
+  function fling() {
+    cancelAnimationFrame(raf);
+    if (Math.abs(vel) < 0.2) { setTimeout(resume, 1400); return; }
+    (function step() {
+      if (Math.abs(vel) < 0.15) { setTimeout(resume, 1400); return; }
+      move(vel);
+      vel *= 0.94;
+      raf = requestAnimationFrame(step);
+    })();
+  }
+
+  // Mouse
+  strip.addEventListener('mousedown', function (e) {
+    dragging = true; startX = e.clientX; lastX = e.clientX; lastT = Date.now(); vel = 0;
+    cancelAnimationFrame(raf);
+    pauseAndCapture();
+  });
+  window.addEventListener('mousemove', function (e) {
+    if (!dragging) return;
+    var now = Date.now(), dt = now - lastT || 1;
+    vel = (e.clientX - lastX) / dt * 16;
+    move(e.clientX - lastX);
+    lastX = e.clientX; lastT = now;
+  });
+  window.addEventListener('mouseup', function () {
+    if (!dragging) return;
+    dragging = false;
+    fling();
+  });
+
+  // Touch
+  strip.addEventListener('touchstart', function (e) {
+    dragging = true; startX = e.touches[0].clientX; lastX = startX; lastT = Date.now(); vel = 0;
+    cancelAnimationFrame(raf);
+    pauseAndCapture();
+  }, { passive: true });
+  strip.addEventListener('touchmove', function (e) {
+    if (!dragging) return;
+    var now = Date.now(), dt = now - lastT || 1;
+    vel = (e.touches[0].clientX - lastX) / dt * 16;
+    move(e.touches[0].clientX - lastX);
+    lastX = e.touches[0].clientX; lastT = now;
+  }, { passive: true });
+  strip.addEventListener('touchend', function () {
+    if (!dragging) return;
+    dragging = false;
+    fling();
+  });
+
+  // Hover pause
+  strip.addEventListener('mouseenter', function () { if (!dragging) track.classList.add('paused'); });
+  strip.addEventListener('mouseleave', function () { if (!dragging) track.classList.remove('paused'); });
+})();
+
+/* ── Nav shrink on scroll ── */
+(function () {
+  var header = document.querySelector('.site-header-wrap');
+  if (!header) return;
+  function onScroll() {
+    if (window.scrollY > 40) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>

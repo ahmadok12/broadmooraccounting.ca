@@ -1,0 +1,81 @@
+{
+  "index.html": {
+    "title": "Accountant in Sherwood Park & Edmonton | Broadmoor Accounting",
+    "description": "Personal and corporate tax, bookkeeping, payroll and GST for individuals and small businesses in Sherwood Park, Edmonton and Strathcona County. Free consultation.",
+    "crumb": null,
+    "service": null
+  },
+  "accounting-services.html": {
+    "title": "Tax Preparation & Bookkeeping – Edmonton & Sherwood Park | Broadmoor",
+    "description": "T1 personal and T2 corporate tax returns, bookkeeping, payroll, GST/HST filings and CRA correspondence for Edmonton-area individuals and small businesses.",
+    "crumb": "Accounting & Tax Services",
+    "service": {"name": "Accounting, bookkeeping and tax preparation", "type": "Tax preparation and bookkeeping"}
+  },
+  "insurance-services.html": {
+    "title": "Life, Critical Illness & Super Visa Insurance – Sherwood Park, AB | Broadmoor",
+    "description": "Compare life, critical illness, disability, health & dental and Super Visa insurance options with licensed advisors serving Sherwood Park and Edmonton.",
+    "crumb": "Insurance Services",
+    "service": {"name": "Insurance needs review and referral to licensed advisors", "type": "Insurance"}
+  },
+  "mortgage-services.html": {
+    "title": "Mortgage Services in Sherwood Park & Edmonton | Broadmoor",
+    "description": "Residential, commercial and reverse mortgage guidance for Edmonton-area homeowners and investors, coordinated with your tax plan by our accounting team.",
+    "crumb": "Mortgage Services",
+    "service": {"name": "Mortgage guidance and referral to a licensed mortgage brokerage", "type": "Mortgage"}
+  },
+  "investment-services.html": {
+    "title": "RRSP, TFSA & RESP Planning – Sherwood Park & Edmonton | Broadmoor",
+    "description": "Understand RRSPs, TFSAs, RESPs, LIRAs and retirement income planning, with tax-aware guidance from our Sherwood Park team serving the Edmonton area.",
+    "crumb": "Investment Services",
+    "service": {"name": "Registered plan and retirement planning guidance", "type": "Financial planning"}
+  },
+  "other-services.html": {
+    "title": "Small Business Loans & Estate Planning – Alberta | Broadmoor",
+    "description": "Help preparing BDC and Canada Small Business Financing applications, plus estate and succession tax planning for Edmonton-area families and business owners.",
+    "crumb": "Business Loans & Estate Planning",
+    "service": {"name": "Business financing preparation and estate tax planning", "type": "Business financing and estate planning"}
+  },
+  "financial-calculators.html": {
+    "title": "Canadian Mortgage & Life Insurance Calculators | Broadmoor",
+    "description": "Free Canadian mortgage payment calculator (semi-annual compounding) and life insurance needs estimator from Broadmoor Accounting & Financials, Sherwood Park.",
+    "crumb": "Financial Calculators",
+    "service": null
+  },
+  "contact-us.html": {
+    "title": "Contact Broadmoor Accounting – Sherwood Park, AB (Edmonton Area)",
+    "description": "Book a free consultation at 12 Blackfoot Road, Sherwood Park, AB, by phone at +1 888 286 7860, or by video call. Serving Edmonton and Strathcona County.",
+    "crumb": "Contact Us",
+    "service": null
+  },
+  "edmonton-accountant.html": {
+    "title": "Accountant Serving Edmonton, AB – Tax & Bookkeeping | Broadmoor",
+    "description": "Edmonton tax preparation, bookkeeping, payroll and GST services from our Sherwood Park office – minutes east of Edmonton, with in-person or virtual meetings.",
+    "crumb": "Serving Edmonton & Area",
+    "service": {"name": "Accounting and tax services for Edmonton clients", "type": "Tax preparation and bookkeeping"}
+  },
+  "privacy-policy.html": {
+    "title": "Privacy Policy | Broadmoor Accounting & Financials",
+    "description": "How Broadmoor Accounting & Financials collects, uses, stores and protects personal information under Alberta's PIPA and Canada's PIPEDA.",
+    "crumb": "Privacy Policy",
+    "service": null
+  },
+  "terms-of-use.html": {
+    "title": "Terms of Use | Broadmoor Accounting & Financials",
+    "description": "Terms governing use of the Broadmoor Accounting & Financials website, calculators and contact forms.",
+    "crumb": "Terms of Use",
+    "service": null
+  },
+  "disclaimer.html": {
+    "title": "Disclaimer & Regulatory Disclosures | Broadmoor Accounting & Financials",
+    "description": "General information disclaimer and disclosures about licensing, referrals, compensation and conflicts of interest at Broadmoor Accounting & Financials.",
+    "crumb": "Disclaimer & Disclosures",
+    "service": null
+  },
+  "404.html": {
+    "title": "Page Not Found | Broadmoor Accounting & Financials",
+    "description": "The page you were looking for could not be found.",
+    "crumb": null,
+    "service": null,
+    "noindex": true
+  }
+}

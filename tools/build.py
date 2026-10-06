@@ -6,7 +6,7 @@ BUILD markers and regenerates sitemap.xml. Pages stay plain static HTML, so the
 nav and footer are visible to search engines without JavaScript.
 
 Usage (from the repo root):  python3 tools/build.py
-Run it after editing anything in partials/. GitHub Actions also runs it on deploy.
+Run it after editing anything in partials/ or tools/pages.json, then commit the result.
 """
 import datetime
 import html as htmllib

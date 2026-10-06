@@ -17,7 +17,7 @@ Static website for Broadmoor Accounting & Financials (Sherwood Park, AB — serv
 
 1. Edit a page, a partial, or `tools/pages.json`.
 2. Run `python3 tools/build.py` (Python 3.8+, no dependencies) to refresh pages and the sitemap.
-3. Commit and push to `main`. The workflow runs the build again and deploys only the public files.
+3. Commit and push to `main` (built pages are committed; the deploy workflow publishes the repo as-is).
 
 Content between `<!-- BUILD:... -->` and `<!-- /BUILD:... -->` markers is generated — changes made there by hand are overwritten.
 

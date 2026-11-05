@@ -171,6 +171,25 @@ def theme_block() -> str:
     return f'  <link rel="stylesheet" href="assets/css/glass.css?v={v}">'
 
 
+_HASHES = {}
+
+
+def asset_version(rel: str) -> str:
+    if rel not in _HASHES:
+        f = ROOT / rel
+        _HASHES[rel] = hashlib.md5(f.read_bytes()).hexdigest()[:8] if f.exists() else ""
+    return _HASHES[rel]
+
+
+def version_assets(text: str) -> str:
+    """Append ?v=<content hash> to local CSS/JS references so browsers refetch them after a change."""
+    def sub(m):
+        attr, rel = m.group(1), m.group(2)
+        v = asset_version(rel)
+        return f'{attr}="{rel}?v={v}"' if v else m.group(0)
+    return re.sub(r'(href|src)="((?:assets/(?:css|js)/[^"?]+\.(?:css|js))|style\.css)(?:\?v=[0-9a-f]+)?"', sub, text)
+
+
 def ensure_theme_marker(text: str) -> str:
     if "<!-- BUILD:theme -->" in text:
         return text
@@ -221,6 +240,7 @@ def main() -> None:
         new = inject(new, "schema", schema_block(page.name, meta, text))
         new = inject(new, "header", mark_current(header, page.name))
         new = inject(new, "footer", mark_current(footer, page.name))
+        new = version_assets(new)
         if new != text:
             page.write_text(new, encoding="utf-8")
             print(f"built   {page.name}")

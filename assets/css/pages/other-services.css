@@ -1,0 +1,97 @@
+/* Styles used only by other-services.html */
+
+.category-block {
+  margin-bottom: 72px;
+}
+
+.category-block:last-child {
+  margin-bottom: 0;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--grey-light);
+}
+
+.category-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.category-icon svg {
+  color: var(--green-light);
+}
+
+.category-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.category-subtitle {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.services-grid-2col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+@media (max-width: 1024px) {
+  .services-grid-2col {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-menu, .nav-book {
+    display: none;
+  }
+  .services-grid-2col {
+    grid-template-columns: 1fr;
+  }
+}
+
+.services-grid .service-card, .services-grid-2col .service-card {
+  animation: fadeUp 0.5s ease both;
+}
+
+.service-card:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.service-card:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.service-card:nth-child(3) {
+  animation-delay: 0.19s;
+}
+
+.service-card:nth-child(4) {
+  animation-delay: 0.26s;
+}
+
+.service-card:nth-child(5) {
+  animation-delay: 0.33s;
+}
+
+.service-card:nth-child(6) {
+  animation-delay: 0.40s;
+}

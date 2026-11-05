@@ -1,0 +1,71 @@
+/* Styles shared by the legal pages (disclaimer, privacy, terms). */
+
+.legal-body {
+  background: var(--off-white);
+  padding: 64px 6% 88px;
+}
+
+.legal-inner {
+  max-width: 820px;
+  margin: 0 auto;
+  background: var(--white);
+  border:1px solid var(--grey-light);
+  border-radius: 18px;
+  padding: 48px 52px;
+}
+
+.legal-inner h2 {
+  font-family:'Playfair Display',serif;
+  color: var(--navy);
+  font-size: 1.45rem;
+  margin: 34px 0 10px;
+}
+
+.legal-inner h2:first-child {
+  margin-top: 0;
+}
+
+.legal-inner h3 {
+  color: var(--navy);
+  font-size: 1.05rem;
+  margin: 22px 0 6px;
+}
+
+.legal-inner p, .legal-inner li {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #3c4660;
+}
+
+.legal-inner ul {
+  padding-left: 22px;
+  margin: 8px 0 12px;
+}
+
+.legal-inner li {
+  margin-bottom: 6px;
+}
+
+.legal-inner a {
+  color: var(--green);
+  text-decoration: underline;
+}
+
+.legal-updated {
+  font-size: 13px !important;
+  color: var(--text-muted) !important;
+  margin-bottom: 26px;
+}
+
+.legal-todo {
+  background: #fff8e6;
+  border: 1px dashed var(--gold);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+@media (max-width: 640px) {
+  .legal-inner {
+    padding: 30px 22px;
+  }
+}

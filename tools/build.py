@@ -9,6 +9,7 @@ Usage (from the repo root):  python3 tools/build.py
 Run it after editing anything in partials/ or tools/pages.json, then commit the result.
 """
 import datetime
+import hashlib
 import html as htmllib
 import json
 import pathlib
@@ -162,6 +163,20 @@ def schema_block(name: str, meta: dict, text: str) -> str:
     return '<script type="application/ld+json">\n' + json.dumps(data, ensure_ascii=False, indent=1) + "\n</script>"
 
 
+def theme_block() -> str:
+    """Stylesheet loaded last so the glass design layer overrides per-page inline CSS.
+    The ?v= hash busts browser caches whenever glass.css changes."""
+    css = (ROOT / "assets" / "css" / "glass.css").read_bytes()
+    v = hashlib.md5(css).hexdigest()[:8]
+    return f'  <link rel="stylesheet" href="assets/css/glass.css?v={v}">'
+
+
+def ensure_theme_marker(text: str) -> str:
+    if "<!-- BUILD:theme -->" in text:
+        return text
+    return text.replace("</head>", "<!-- BUILD:theme -->\n<!-- /BUILD:theme -->\n</head>", 1)
+
+
 def mark_current(html: str, page: str) -> str:
     """Add aria-current to links pointing at the current page."""
     return re.sub(
@@ -193,6 +208,7 @@ def lastmod(path: pathlib.Path) -> str:
 
 def main() -> None:
     header, footer = partial("header"), partial("footer")
+    theme = theme_block()
     meta_all = json.loads((ROOT / "tools" / "pages.json").read_text(encoding="utf-8"))
     pages = sorted(p for p in ROOT.glob("*.html"))
     for page in pages:
@@ -200,7 +216,8 @@ def main() -> None:
         meta = meta_all.get(page.name)
         if meta is None:
             raise SystemExit(f"{page.name}: add an entry to tools/pages.json")
-        new = inject(text, "head", head_block(page.name, meta))
+        new = inject(ensure_theme_marker(text), "head", head_block(page.name, meta))
+        new = inject(new, "theme", theme)
         new = inject(new, "schema", schema_block(page.name, meta, text))
         new = inject(new, "header", mark_current(header, page.name))
         new = inject(new, "footer", mark_current(footer, page.name))

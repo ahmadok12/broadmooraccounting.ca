@@ -29,3 +29,20 @@ Copy an existing page, give it the `BUILD:head`, `BUILD:schema`, `BUILD:header` 
 ## Contact forms
 
 Any `<form data-web3form>` is submitted by `assets/js/site.js` to Web3Forms. Every field needs a `name`. Keep the consent checkbox (`name="consent"`) — it is referenced by the Privacy Policy.
+
+## CSS layout
+
+Load order on each page: `style.css` → shared group file(s) → `assets/css/pages/<page>.css` (page-only rules) → `assets/css/glass.css` (design layer, injected by the build).
+
+| File | Used by |
+|---|---|
+| `assets/css/components.css` | Service pages, contact, calculators |
+| `assets/css/services.css` | The five original service pages |
+| `assets/css/service-page.css` + `legal.css` | Legal pages and 404 |
+| `assets/css/landing.css` | Edmonton page and the dedicated service landing pages |
+
+The build adds a content-hash `?v=` to every local CSS/JS link, so browsers pick up changes immediately.
+
+## Yearly content updates
+
+Before each tax season, update the year-specific dates and rates on `personal-tax-return.html` (key dates table and rate note) and `corporate-tax-return.html` (2026 rates). Re-check the Super Visa requirements on `super-visa-insurance.html` against IRCC's page.

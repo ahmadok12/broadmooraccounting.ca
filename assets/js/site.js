@@ -98,7 +98,7 @@
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMobileNav(); });
 
   /* ── Active nav state (aria-current is set at build time) ─ */
-  var current = document.querySelector('.mega-grid a[aria-current="page"]');
+  var current = document.querySelector('.mega-grid a[aria-current="page"], .mega-popular a[aria-current="page"]');
   if (current) {
     var t = document.querySelector('.mega-trigger'); if (t) t.classList.add('active');
     var mt = document.querySelector('.mobile-sub-toggle'); if (mt) mt.classList.add('active');

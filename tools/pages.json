@@ -95,5 +95,57 @@
     "crumb": null,
     "service": null,
     "noindex": true
+  },
+  "personal-tax-return.html": {
+    "title": "Personal Tax Returns – Sherwood Park & Edmonton | Broadmoor",
+    "description": "T1 personal tax return preparation and e-filing for employees, families, retirees, self-employed and newcomers in Sherwood Park and Edmonton. Free consultation.",
+    "crumb": "Personal Tax Returns",
+    "parent": [
+      "accounting-services.html",
+      "Accounting & Tax Services"
+    ],
+    "service": {
+      "name": "Personal income tax return preparation (T1)",
+      "type": "Tax preparation"
+    }
+  },
+  "corporate-tax-return.html": {
+    "title": "Corporate Tax Returns (T2 & AT1) – Edmonton | Broadmoor",
+    "description": "T2 and Alberta AT1 corporate tax returns, year-end financial statements and owner pay planning for small corporations in Edmonton and Sherwood Park.",
+    "crumb": "Corporate Tax Returns",
+    "parent": [
+      "accounting-services.html",
+      "Accounting & Tax Services"
+    ],
+    "service": {
+      "name": "Corporate income tax return preparation (T2 and Alberta AT1)",
+      "type": "Tax preparation"
+    }
+  },
+  "bookkeeping-payroll.html": {
+    "title": "Bookkeeping & Payroll Services – Edmonton | Broadmoor",
+    "description": "Monthly bookkeeping, payroll, T4 slips and GST returns for small businesses in Edmonton, Sherwood Park and Strathcona County. Catch-up bookkeeping available.",
+    "crumb": "Bookkeeping & Payroll",
+    "parent": [
+      "accounting-services.html",
+      "Accounting & Tax Services"
+    ],
+    "service": {
+      "name": "Bookkeeping, payroll and GST filing",
+      "type": "Bookkeeping"
+    }
+  },
+  "super-visa-insurance.html": {
+    "title": "Super Visa Insurance – Edmonton & Sherwood Park | Broadmoor",
+    "description": "Compare Super Visa medical insurance for parents and grandparents through licensed advisors: $100,000 minimum, 1-year validity, monthly payment options.",
+    "crumb": "Super Visa Insurance",
+    "parent": [
+      "insurance-services.html",
+      "Insurance Services"
+    ],
+    "service": {
+      "name": "Super Visa insurance comparison through licensed advisors",
+      "type": "Insurance"
+    }
   }
 }

@@ -24,6 +24,10 @@ PRIORITY = {
     "index.html": "1.0",
     "accounting-services.html": "0.9",
     "edmonton-accountant.html": "0.9",
+    "personal-tax-return.html": "0.9",
+    "corporate-tax-return.html": "0.9",
+    "bookkeeping-payroll.html": "0.8",
+    "super-visa-insurance.html": "0.8",
     "insurance-services.html": "0.8",
     "mortgage-services.html": "0.8",
     "investment-services.html": "0.8",
@@ -147,9 +151,12 @@ def schema_block(name: str, meta: dict, text: str) -> str:
             "description": meta["description"], "inLanguage": "en-CA",
             "isPartOf": {"@id": SITE + "/#website"}, "about": {"@id": BUSINESS_ID}}
     if meta.get("crumb"):
+        trail = [("Home", SITE + "/")]
+        if meta.get("parent"):
+            trail.append((meta["parent"][1], page_url(meta["parent"][0])))
+        trail.append((meta["crumb"], url))
         page["breadcrumb"] = {"@type": "BreadcrumbList", "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE + "/"},
-            {"@type": "ListItem", "position": 2, "name": meta["crumb"], "item": url},
+            {"@type": "ListItem", "position": i, "name": n, "item": u} for i, (n, u) in enumerate(trail, 1)
         ]}
     graph.append(page)
     if meta.get("service"):

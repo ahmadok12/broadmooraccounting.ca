@@ -760,3 +760,41 @@ html body .area-tags a.tag:hover { background: var(--green-pale); transform: tra
 .mega-popular + .mega-foot { border-top: 0; margin-top: 2px; padding-top: 4px; }
 .mobile-sub-label { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--text-muted); padding: 10px 10px 2px; }
 .mobile-nav .mobile-submenu a.mobile-sub-small { padding: 7px 10px 7px 54px !important; font-size: 14px; color: var(--text-muted) !important; }
+
+/* Homepage service panels: "View all services" button takes the panel's own colour
+   instead of the generic green button, as a frosted pill that fills white on hover */
+#panel-accounting  { --panel-bg: #1a2e5a; --panel-accent: #a8c8ff; }
+#panel-insurance   { --panel-bg: #1e6e42; --panel-accent: #7ee8a2; }
+#panel-investments { --panel-bg: #5c2d91; --panel-accent: #d4a8ff; }
+#panel-mortgages   { --panel-bg: #9b2c5e; --panel-accent: #fdb8d8; }
+#panel-others      { --panel-bg: #2d3a8c; --panel-accent: #b8c8f4; }
+html body .banner-btn {
+  position: relative;
+  z-index: 1;
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: var(--r-pill);
+  font: 600 14px/20px 'DM Sans', sans-serif;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.18) inset;
+  white-space: nowrap;
+  transition: background-color .3s var(--ease-out), color .3s var(--ease-out), border-color .3s var(--ease-out), transform .5s var(--ease-out), box-shadow .3s var(--ease-out);
+}
+html body .banner-btn .arr { transition: transform .5s var(--ease-out); }
+html body .banner-btn:hover {
+  background: #fff;
+  color: var(--panel-bg, var(--navy));
+  border-color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -12px rgba(0, 0, 0, 0.45);
+}
+html body .banner-btn:hover .arr { transform: translateX(4px); }
+html body .banner-btn:active { transform: scale(0.98); }
+html body .banner-btn:focus-visible { outline: 2px solid var(--panel-accent, #fff); outline-offset: 3px; }
